@@ -40,3 +40,22 @@ if (num >= 1 && num <= 100) {
     alert('잘못된 입력값 입니다.');
 }
 
+let num = prompt('1~100 사이의 숫자를 입력해 주세요');
+
+if (num >= 1 && num <= 100) {
+
+    let primFilter = Array.from({ length: num - 1 }, (_, i) => i + 2)
+        .filter(n => {
+            for (let i = 2; i < n; i++) {
+                if (n % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        });
+
+    alert("소수는 " + primFilter + "입니다.");
+
+} else {
+    alert('잘못된 입력값 입니다.');
+}
