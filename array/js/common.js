@@ -185,3 +185,27 @@ console.log(" arrJoin : " + arrJoin)
 console.log(" arrJoin.join('') : " + arrJoin.join(""))
 
 console.log("------------every----------")
+const arrEvery = [2, 4];
+console.log(" arrEvery : " + arrEvery)
+let resultEvery = arrEvery.every(function(val){return val <= 5});
+console.log(" resultEvery = arrEvery.every(function(val){return val <= 5}) : " + resultEvery)
+resultEvery = arrEvery.every(function (val) { return val % 2 === 0 });
+console.log(" resultEvery = arrEvery.every(function(val){return val % 2 === 0}) : " + resultEvery)
+resultEvery = arrEvery.every((val) => val % 2 === 0 );
+console.log(" resultEvery = arrEvery.every((val) => val % 2 === 0}) : " + resultEvery)
+
+console.log("------------some----------")
+const arrSome = [2, 4, 6, 8 ,10];
+console.log(" arrSome : " + arrSome)
+let resultSome = arrSome.some(function (val) { return val === 2 });
+console.log(" resultSome = arrEvery.some(function(val){return val === 2}) : " + resultSome)
+resultSome = arrSome.some(function (val) { return val % 2 === 0 });
+console.log(" resultSome = arrEvery.some(function(val){return val % 2 === 0}) : " + resultSome)
+resultSome = arrSome.some((val) => val % 2 === 0);
+console.log(" resultSome = arrEvery.some((val) => val % 2 === 0}) : " + resultSome)
+
+console.log("------------filter----------")
+const arrFilter = [1, 2, 3, 4, 5, 6];
+console.log(" arrFilter : " + arrFilter);
+let resultArrFilter = arrSome.filter(function (val) { return val >= 3 });
+console.log(" resultArrFilter = arrFilter.filter(function(val){return val >= 3}) : " + resultArrFilter)
