@@ -46,3 +46,34 @@ if (num >= 1 && num <= 100) {
 } else {
     alert('잘못된 입력값 입니다.');
 }
+
+let num = prompt('1~100 사이의 숫자를 입력해 주세요');
+
+if (num >= 1 && num <= 100) {
+  // 소수 배열 초기화
+  let primes = [];
+  for (let i = 2; i <= num; i++) {
+    primes[i] = true;
+  }
+
+  // 에라토스테네스의 체 알고리즘
+  for (let i = 2; i * i <= num; i++) {
+    if (primes[i]) {
+      for (let j = i * i; j <= num; j += i) {
+        primes[j] = false;
+      }
+    }
+  }
+
+  // 소수만 모아서 새로운 배열 생성
+  let primeFilter = [];
+  for (let i = 2; i <= num; i++) {
+    if (primes[i]) {
+      primeFilter.push(i);
+    }
+  }
+
+  alert("소수는 " + primeFilter + "입니다.");
+} else {
+  alert('잘못된 입력값 입니다.');
+}
